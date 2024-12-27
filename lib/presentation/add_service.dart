@@ -27,7 +27,7 @@ class _AddServicesState extends State<AddServices> {
       resizeToAvoidBottomInset: true,
       backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
       appBar: AppBar(
-        toolbarHeight: 130,
+        toolbarHeight: 100,
         leading: IconButton(
           padding: const EdgeInsets.symmetric(horizontal: 30),
           icon: const Icon(Icons.arrow_back,
@@ -47,7 +47,7 @@ class _AddServicesState extends State<AddServices> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'Add Passenger',
+                'Add Service',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -145,6 +145,7 @@ class _AddServicesState extends State<AddServices> {
                   filled: true,
                   fillColor: Colors.white,
                 ),
+                dropdownColor: Colors.white,
               ),
               const SizedBox(height: 15),
               const Text(

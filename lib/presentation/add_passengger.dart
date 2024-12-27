@@ -23,7 +23,7 @@ class _AddPassenggerState extends State<AddPassengger> {
       resizeToAvoidBottomInset: true,
       backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
       appBar: AppBar(
-        toolbarHeight: 130,
+        toolbarHeight: 100,
         leading: IconButton(
           padding: const EdgeInsets.symmetric(horizontal: 30),
           icon: const Icon(Icons.arrow_back,
@@ -113,6 +113,7 @@ class _AddPassenggerState extends State<AddPassengger> {
                   filled: true,
                   fillColor: Colors.white,
                 ),
+                dropdownColor: Colors.white,
               ),
               const SizedBox(height: 15),
               const Text(
@@ -149,28 +150,56 @@ class _AddPassenggerState extends State<AddPassengger> {
               const SizedBox(height: 5),
               Row(
                 children: [
-                  Expanded(
-                    child: TextField(
-                      controller: _whatsappNumberController,
-                      keyboardType: TextInputType.phone,
+                  Container(
+                    width: 80,
+                    child: DropdownButtonFormField<String>(
+                      value: '+62',
+                      onChanged: null,
+                      items: [
+                        DropdownMenuItem(
+                          value: '+62',
+                          child: Text('+62'),
+                        ),
+                      ],
                       decoration: const InputDecoration(
-                        prefixText: '+62 ',
-                        hintText: 'WhatsApp Number',
-                        hintStyle: const TextStyle(color: Colors.grey),
-                        enabledBorder: const OutlineInputBorder(
+                        enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.grey,
                             width: 0.5,
                           ),
                         ),
-                        focusedBorder: const OutlineInputBorder(
+                        focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Color.fromARGB(255, 76, 76, 76),
                           ),
                         ),
                         filled: true,
                         fillColor: Colors.white,
-                        floatingLabelBehavior: FloatingLabelBehavior.never,
+                      ),
+                      dropdownColor: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: TextField(
+                      controller: _whatsappNumberController,
+                      keyboardType: TextInputType.phone,
+                      decoration: const InputDecoration(
+                        hintText: 'WhatsApp Number',
+                        hintStyle: TextStyle(color: Colors.grey),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.grey,
+                            width: 0.5,
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color.fromARGB(255, 76, 76, 76),
+                          ),
+                        ),
+                        filled: true,
+                        fillColor: Colors.white,
                       ),
                     ),
                   ),
